@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nicodemus.Controls.Test.Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nicodemus.Controls.Test.DesktopClient", "Nicodemus.Controls.Test\Nicodemus.Controls.Test.DesktopClient\Nicodemus.Controls.Test.DesktopClient.csproj", "{51677494-E4DB-4BBA-A1C4-1DA5D2F0932D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nicodemus.Controls", "Nicodemus.Controls\Nicodemus.Controls.csproj", "{B9D9AFC3-5948-45CF-892B-5EA9DD33B8CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{51677494-E4DB-4BBA-A1C4-1DA5D2F0932D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51677494-E4DB-4BBA-A1C4-1DA5D2F0932D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51677494-E4DB-4BBA-A1C4-1DA5D2F0932D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9D9AFC3-5948-45CF-892B-5EA9DD33B8CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9D9AFC3-5948-45CF-892B-5EA9DD33B8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9D9AFC3-5948-45CF-892B-5EA9DD33B8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9D9AFC3-5948-45CF-892B-5EA9DD33B8CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,7 @@
     <SchemaVersion>
     </SchemaVersion>
     <ProjectTypeGuids>{8BB0C5E8-0616-4F60-8E55-A43933E57E9C};{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{FAE04EC0-301F-11d3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{51677494-e4db-4bba-a1c4-1da5d2f0932d}</ProjectGuid>
+    <ProjectGuid>{51677494-E4DB-4BBA-A1C4-1DA5D2F0932D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>LightSwitchApplication</RootNamespace>
     <AssemblyName>Nicodemus.Controls.Test.DesktopClient</AssemblyName>
@@ -228,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\TestDataItemsListDetail.lsml.cs">
+      <DependentUpon>TestDataItemsListDetail.lsml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\Client.lsml">
@@ -236,9 +239,14 @@
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\OutOfBrowserSettings.xml" />
     <ClientResource Include="Properties\Config.xml" />
+    <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Screens\TestDataItemsListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Screens\" />
+    <ProjectReference Include="..\..\Nicodemus.Controls\Nicodemus.Controls.csproj">
+      <Project>{b9d9afc3-5948-45cf-892b-5ea9dd33b8cf}</Project>
+      <Name>Nicodemus.Controls</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="default.htm">
@@ -256,4 +264,17 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+      <FlavorProperties GUID="{8BB0C5E8-0616-4F60-8E55-A43933E57E9C}" Configuration="Debug|Any CPU">
+        <SpecializedConfiguration />
+      </FlavorProperties>
+      <FlavorProperties GUID="{8BB0C5E8-0616-4F60-8E55-A43933E57E9C}" Configuration="Release|Any CPU">
+        <SpecializedConfiguration />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
