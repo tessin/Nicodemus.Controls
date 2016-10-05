@@ -188,6 +188,10 @@
     <Reference Include="System.Windows.Controls.Input">
       <ProjectCritical>True</ProjectCritical>
     </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SilverlightToolkit-Input.4.2010.4\lib\sl4\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows.Controls.Navigation">
       <ProjectCritical>True</ProjectCritical>
     </Reference>
@@ -195,6 +199,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(WCFRIASERVICESSDKPath)\v1.0\Libraries\Silverlight\System.Windows.Controls.DomainServices.dll</HintPath>
       <ProjectCritical>True</ProjectCritical>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SilverlightToolkit-Core.4.2010.4\lib\sl4\System.Windows.Controls.Toolkit.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Windows.Data">
       <ProjectCritical>True</ProjectCritical>
@@ -236,6 +244,8 @@
     <LightSwitchModel Include="Properties\Client.lsml">
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
+    <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\OutOfBrowserSettings.xml" />
     <ClientResource Include="Properties\Config.xml" />

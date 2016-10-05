@@ -36,6 +36,14 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="DateTimeField"
+        PropertyType=":DateTime">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
         PropertyType=":Person?">
