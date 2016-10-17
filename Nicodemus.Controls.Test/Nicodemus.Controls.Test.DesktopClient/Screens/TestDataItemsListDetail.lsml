@@ -238,6 +238,32 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
+                Name="LinkTextField"
+                Kind="Value"
+                DataType=":String"
+                View="Microsoft.LightSwitch.RichClient:ValueCustomContentControl">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="TestDataItem/Properties[TextField]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootCustomContentControl/Properties[CustomControl]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="Nicodemus.Controls.LinkButton, Nicodemus.Controls"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
                 Name="DateTimeField"
                 Kind="Value"
                 DataType=":DateTime"
