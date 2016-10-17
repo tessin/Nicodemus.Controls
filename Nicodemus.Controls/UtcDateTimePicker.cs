@@ -2,7 +2,9 @@
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Markup;
+using Nicodemus.Controls.Helpers;
 
 namespace Nicodemus.Controls
 {
@@ -44,22 +46,20 @@ namespace Nicodemus.Controls
 
         private static void OnTimeZoneOffsetChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            var picker = (UtcDateTimePicker)sender;
-            picker.LocalValue = picker.Value == new DateTime() // not initialized, can cause underflow
-                ? picker.Value
-                : picker.Value + picker.TimeZoneOffset;
+            var control = (UtcDateTimePicker)sender;
+            control.LocalValue = control.Value.SumWithoutOverflow(control.TimeZoneOffset);
         }
 
         private static void OnValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            var picker = (UtcDateTimePicker)sender;
-            picker.LocalValue = picker.Value + picker.TimeZoneOffset;
+            var control = (UtcDateTimePicker)sender;
+            control.LocalValue = control.Value.SumWithoutOverflow(control.TimeZoneOffset);
         }
 
         private static void OnLocalValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            var picker = (UtcDateTimePicker)sender;
-            picker.Value = picker.LocalValue - picker.TimeZoneOffset;
+            var control = (UtcDateTimePicker)sender;
+            control.Value = control.LocalValue.SumWithoutOverflow(-control.TimeZoneOffset);
         }
     }
 }

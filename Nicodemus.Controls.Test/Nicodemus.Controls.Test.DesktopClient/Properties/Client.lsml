@@ -39,6 +39,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowTestDataItemsListDetail"
       Target="!module/Methods[ShowTestDataItemsListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowTestDataItemsGrid"
+      Target="!module/Methods[ShowTestDataItemsGrid]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -51,6 +54,9 @@
       <ApplicationNavigationLink
         Name="TestDataItemsListDetail"
         Command="!module/Commands[ScreenCommandShowTestDataItemsListDetail]" />
+      <ApplicationNavigationLink
+        Name="TestDataItemsGrid"
+        Command="!module/Commands[ScreenCommandShowTestDataItemsGrid]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

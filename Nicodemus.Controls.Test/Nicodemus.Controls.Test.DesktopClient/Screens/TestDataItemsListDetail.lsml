@@ -264,6 +264,32 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
+                Name="DateTimeField1"
+                Kind="Value"
+                DataType=":DateTime"
+                View="Microsoft.LightSwitch.RichClient:ValueCustomContentControl">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="TestDataItem/Properties[DateTimeField]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootCustomContentControl/Properties[CustomControl]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="Nicodemus.Controls.UtcDateTimeLabel, Nicodemus.Controls"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
                 Name="CreatedBy1"
                 Kind="Value"
                 DataType=":Person?">

@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.LightSwitch.Presentation.Extensions;
-using System.Windows.Controls;
 using Nicodemus.Controls;
 
 namespace LightSwitchApplication
@@ -12,6 +11,11 @@ namespace LightSwitchApplication
             this.FindControl("DateTimeField").ControlAvailable += (s, e) =>
             {
                 ((UtcDateTimePicker)e.Control).TimeZoneOffset = TimeSpan.FromHours(2);
+            };
+            this.FindControl("DateTimeField1").ControlAvailable += (s, e) =>
+            {
+                ((UtcDateTimeLabel)e.Control).TimeZoneOffset = TimeSpan.FromHours(2);
+                ((UtcDateTimeLabel)e.Control).Format = "g";
             };
         }
     }

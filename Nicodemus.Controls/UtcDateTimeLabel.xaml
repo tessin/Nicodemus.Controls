@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Nicodemus.Controls">
+
+    <Style TargetType="controls:UtcDateTimeLabel">
+        <Setter Property="Padding" Value="3,3"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:UtcDateTimeLabel">
+                    <Grid x:Name="RootElement">
+                        <ContentControl x:Name="ContentElement" IsTabStop="False" Padding="{TemplateBinding Padding}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
