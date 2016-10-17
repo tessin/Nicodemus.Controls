@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace Nicodemus.Controls
 {
@@ -8,6 +9,7 @@ namespace Nicodemus.Controls
         {
             IsReadOnly = true;
             DefaultStyleKey = typeof(SelectableLabel);
+            Loaded += (s, e) => SetBinding(TextProperty, new Binding("Value") { Mode = BindingMode.OneWay });
         }
     }
 }

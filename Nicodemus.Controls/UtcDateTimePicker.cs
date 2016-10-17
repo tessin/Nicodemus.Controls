@@ -39,6 +39,7 @@ namespace Nicodemus.Controls
         {
             DefaultStyleKey = typeof(UtcDateTimePicker);
             Language = XmlLanguage.GetLanguage(Thread.CurrentThread.CurrentCulture.Name);
+            Loaded += (s, e) => SetBinding(ValueProperty, new Binding("Value") { Mode = BindingMode.TwoWay });
         }
 
         private static void OnTimeZoneOffsetChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
