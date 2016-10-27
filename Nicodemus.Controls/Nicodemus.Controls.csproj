@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusyIndicator.cs" />
+    <Compile Include="ConditionalStyledLabel.cs" />
     <Compile Include="Converters\DatePickerOnlyDateConverter.cs" />
     <Compile Include="Helpers\DateTimeExtensions.cs" />
     <Compile Include="LinkButton.cs" />

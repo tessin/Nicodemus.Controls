@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Windows;
+using System.Windows.Media;
 using Microsoft.LightSwitch.Presentation.Extensions;
 using Nicodemus.Controls;
 
@@ -30,7 +31,12 @@ namespace LightSwitchApplication
                     MessageBox.Show(((LinkButton)sender).Content.ToString());
                 };
             };
-
+            this.FindControl("MyConditionalStyledLabel").ControlAvailable += (s, e) =>
+            {
+                ((ConditionalStyledLabel)e.Control).ConditionalForeground = new SolidColorBrush(Colors.Red);
+                ((ConditionalStyledLabel)e.Control).ConditionalFontWeight = FontWeights.Bold;
+                ((ConditionalStyledLabel)e.Control).OnEvaluate = obj => ((TestDataItem)obj).BooleanField;
+            };
         }
 
         partial void LongRunningMethod_Execute()
