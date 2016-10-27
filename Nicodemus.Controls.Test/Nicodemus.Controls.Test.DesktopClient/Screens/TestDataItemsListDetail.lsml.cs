@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows;
 using Microsoft.LightSwitch.Presentation.Extensions;
 using Nicodemus.Controls;
@@ -7,8 +8,12 @@ namespace LightSwitchApplication
 {
     public partial class TestDataItemsListDetail
     {
+        private BusyIndicator _busyIndicator;
+
         partial void TestDataItemsListDetail_Activated()
         {
+            _busyIndicator = new BusyIndicator(this);
+
             this.FindControl("DateTimeField").ControlAvailable += (s, e) =>
             {
                 ((UtcDateTimePicker)e.Control).TimeZoneOffset = TimeSpan.FromHours(2);
@@ -25,6 +30,14 @@ namespace LightSwitchApplication
                     MessageBox.Show(((LinkButton)sender).Content.ToString());
                 };
             };
+
+        }
+
+        partial void LongRunningMethod_Execute()
+        {
+            _busyIndicator.IsBusy = true;
+            Thread.Sleep(10000);
+            _busyIndicator.IsBusy = false;
         }
     }
 }
