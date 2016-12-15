@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Tessin.Lightswitch.Controls</id>
+    <version>1.0.0</version>
+    <authors>Aleksey Shubin, Thomas Bladh</authors>
+    <owners>Tessin Nordic AB</owners>
+    <licenseUrl></licenseUrl>
+    <projectUrl>https://github.com/tessin/Nicodemus.Controls</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A collection of lightswitch controls including time zone aware date pickers and labels, selectable label, as well as a custom busy indicator.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright © 2016 Tessin Nordic AB</copyright>
+    <tags>Lightswitch</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="mscorlib" />
+      <frameworkAssembly assemblyName="system" />
+      <frameworkAssembly assemblyName="System.Net" />
+      <frameworkAssembly assemblyName="System.Core" />
+      <frameworkAssembly assemblyName="System.Windows" />
+      <frameworkAssembly assemblyName="System.Windows.Browser" />
+      <frameworkAssembly assemblyName="System.Windows.Controls" />
+      <frameworkAssembly assemblyName="System.Windows.Controls.Input.Toolkit" />
+      <frameworkAssembly assemblyName="System.Windows.Controls.Toolkit" />
+      <frameworkAssembly assemblyName="System.Xml" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

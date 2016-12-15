@@ -45,6 +45,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.LightSwitch">
       <HintPath>C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v5.0\Client\Microsoft.LightSwitch.dll</HintPath>
@@ -107,9 +110,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Package.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Package\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
@@ -118,6 +124,10 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)nuget.exe pack $(ProjectDir)Nicodemus.Controls.csproj
+xcopy $(ProjectDir)*.nupkg $(ProjectDir)Package\</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
