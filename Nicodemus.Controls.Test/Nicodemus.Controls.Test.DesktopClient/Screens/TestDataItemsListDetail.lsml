@@ -439,6 +439,22 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
+              <ContentItem
+                Name="SelectFile"
+                Kind="ScreenContent">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootCustomContentControl/Properties[CustomControl]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="Nicodemus.Controls.SelectFile, Nicodemus.Controls"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
                   Name="LongRunningMethod"
@@ -553,6 +569,8 @@
       </ScreenMethod>
       <ScreenMethod
         Name="LongRunningMethod" />
+      <ScreenMethod
+        Name="SelectFileMethod" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

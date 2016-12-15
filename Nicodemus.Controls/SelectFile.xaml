@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Nicodemus.Controls.SelectFile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignHeight="22" d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Column="0" Name="PathTextBox" Text="Select a file..."/>
+        <Button Grid.Column="1" Name="BrowseButton" Click="BrowseButton_OnClick">...</Button>
+    </Grid>
+</UserControl>
