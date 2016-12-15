@@ -126,7 +126,7 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>$(ProjectDir)nuget.exe pack $(ProjectDir)Nicodemus.Controls.csproj
-xcopy $(ProjectDir)*.nupkg $(ProjectDir)Package\</PostBuildEvent>
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
