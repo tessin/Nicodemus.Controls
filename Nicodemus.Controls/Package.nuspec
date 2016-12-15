@@ -5,7 +5,7 @@
     <version>1.0.0</version>
     <authors>Aleksey Shubin, Thomas Bladh</authors>
     <owners>Tessin Nordic AB</owners>
-    <licenseUrl></licenseUrl>
+    <licenseUrl>https://github.com/tessin/Nicodemus.Controls/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/tessin/Nicodemus.Controls</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A collection of lightswitch controls including time zone aware date pickers and labels, selectable label, as well as a custom busy indicator.</description>
