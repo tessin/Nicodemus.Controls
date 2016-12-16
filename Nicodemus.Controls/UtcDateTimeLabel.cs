@@ -10,30 +10,44 @@ namespace Nicodemus.Controls
     public class UtcDateTimeLabel : SelectableLabel
     {
         public static readonly DependencyProperty TimeZoneOffsetProperty = DependencyProperty.Register(
-            "TimeZoneOffset", typeof(TimeSpan), typeof(UtcDateTimeLabel), new PropertyMetadata(OnTimeZoneOffsetChanged));
+            "TimeZoneOffset", typeof(TimeSpan?), typeof(UtcDateTimeLabel), new PropertyMetadata(OnTimeZoneOffsetChanged));
 
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value",
-            typeof(DateTime), typeof(UtcDateTimeLabel), new PropertyMetadata(OnValueChanged));
+            typeof(DateTime?), typeof(UtcDateTimeLabel), new PropertyMetadata(OnValueChanged));
 
         public static readonly DependencyProperty FormatProperty = DependencyProperty.Register("Format",
             typeof(string), typeof(UtcDateTimeLabel), new PropertyMetadata(OnFormatChanged));
 
-        public TimeSpan TimeZoneOffset
+        public static TimeSpan DefaultTimeZoneOffset { get; set; }
+
+        public static string DefaultFormat { get; set; }
+
+        public TimeSpan? TimeZoneOffset
         {
-            get { return (TimeSpan)GetValue(TimeZoneOffsetProperty); }
+            get
+            {
+                var value = GetValue(TimeZoneOffsetProperty);
+                return (TimeSpan?)(value ?? DefaultTimeZoneOffset);
+            }
             set { SetValue(TimeZoneOffsetProperty, value); }
         }
 
-        public DateTime Value
+        public DateTime? Value
         {
-            get { return (DateTime)GetValue(ValueProperty); }
+            get { return (DateTime?)GetValue(ValueProperty); }
             set { SetValue(ValueProperty, value); }
         }
 
         public string Format
         {
-            get { return (string)GetValue(FormatProperty); }
+            get { return (string)GetValue(FormatProperty) ?? DefaultFormat; }
             set { SetValue(FormatProperty, value); }
+        }
+
+        static UtcDateTimeLabel()
+        {
+            DefaultTimeZoneOffset = DateTime.Now.UtcOffset();
+            DefaultFormat = "g";
         }
 
         public UtcDateTimeLabel()
@@ -60,8 +74,10 @@ namespace Nicodemus.Controls
 
         private void SetText()
         {
-            var localValue = Value.SumWithoutOverflow(TimeZoneOffset);
-            Text = localValue.ToString(!string.IsNullOrWhiteSpace(Format) ? Format : "g");
+            var local = Value?.SumWithoutOverflow(TimeZoneOffset ?? TimeSpan.Zero);
+            Text = local.HasValue ? local.Value.ToString(!string.IsNullOrWhiteSpace(Format) ? 
+                Format : DefaultFormat) : "";
         }
+
     }
 }

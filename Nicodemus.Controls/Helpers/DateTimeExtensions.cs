@@ -13,5 +13,11 @@ namespace Nicodemus.Controls.Helpers
             else
                 return value + offset;
         }
+
+        public static TimeSpan UtcOffset(this DateTime value)
+        {
+            return TimeZoneInfo.Local.GetUtcOffset(DateTime.Now);
+        }
+
     }
 }

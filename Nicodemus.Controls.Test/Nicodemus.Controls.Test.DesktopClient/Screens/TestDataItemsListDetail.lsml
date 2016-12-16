@@ -20,10 +20,10 @@
           Kind="Group"
           View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
           <ContentItem
-            Name="ListColumn"
+            Name="Group"
             Kind="Group">
             <ContentItem
-              Name="TestDataItemList"
+              Name="TestDataItems"
               Kind="Collection"
               DataType="CollectionView$TestDataItem"
               View="Microsoft.LightSwitch.RichClient:List">
@@ -36,7 +36,7 @@
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
-                Name="RowTemplate"
+                Name="TestDataItemsTemplate"
                 Kind="Details"
                 DataType="TestDataItem">
                 <ContentItem.DataSource>
@@ -45,7 +45,7 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="TextField"
+                  Name="TextField3"
                   Kind="Value"
                   DataType=":String">
                   <ContentItem.DataSource>
@@ -58,7 +58,46 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="CreatedBy"
+                  Name="NullableDateTimeField1"
+                  Kind="Value"
+                  DataType=":DateTime?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="TestDataItem/Properties[NullableDateTimeField]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="DateTimeField1"
+                  Kind="Value"
+                  DataType=":DateTime">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="TestDataItem/Properties[DateTimeField]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="BooleanField1"
+                  Kind="Value"
+                  DataType=":Boolean">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="TestDataItem/Properties[BooleanField]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="CreatedBy2"
                   Kind="Value"
                   DataType=":Person?">
                   <ContentItem.DataSource>
@@ -71,7 +110,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Created"
+                  Name="Created2"
                   Kind="Value"
                   DataType=":DateTimeOffset?">
                   <ContentItem.DataSource>
@@ -84,7 +123,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="ModifiedBy"
+                  Name="ModifiedBy2"
                   Kind="Value"
                   DataType=":Person?">
                   <ContentItem.DataSource>
@@ -97,7 +136,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Modified"
+                  Name="Modified2"
                   Kind="Value"
                   DataType=":DateTimeOffset?">
                   <ContentItem.DataSource>
@@ -126,7 +165,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="TestDataItems_EditSelected"
+                  Name="TestDataItems_EditSelected1"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -140,7 +179,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="TestDataItems_DeleteSelected"
+                  Name="TestDataItems_DeleteSelected1"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -154,41 +193,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
               </ContentItem.CommandItems>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="Collapsed"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="Stretch"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
             </ContentItem>
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="2"
-                      ResultType=":Double" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
           </ContentItem>
           <ContentItem
             Name="DetailsColumn"
@@ -281,6 +286,10 @@
                 Kind="Value"
                 DataType=":DateTime"
                 View="Microsoft.LightSwitch.RichClient:ValueCustomContentControl">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Date Time Field" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -303,15 +312,79 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="DateTimeField1"
+                Name="DateTimeLabel"
                 Kind="Value"
                 DataType=":DateTime"
                 View="Microsoft.LightSwitch.RichClient:ValueCustomContentControl">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Date Time Label" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
                         Member="TestDataItem/Properties[DateTimeField]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootCustomContentControl/Properties[CustomControl]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="Nicodemus.Controls.UtcDateTimeLabel, Nicodemus.Controls"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="NullableDateTimeField"
+                Kind="Value"
+                DataType=":DateTime?"
+                View="Microsoft.LightSwitch.RichClient:ValueCustomContentControl">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Nullable Date Time Field" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="TestDataItem/Properties[NullableDateTimeField]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootCustomContentControl/Properties[CustomControl]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="Nicodemus.Controls.UtcDateTimePicker, Nicodemus.Controls"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="NullableDateTimeLabel"
+                Kind="Value"
+                DataType=":DateTime?"
+                View="Microsoft.LightSwitch.RichClient:ValueCustomContentControl">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Nullable Date Time Label" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="TestDataItem/Properties[NullableDateTimeField]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -571,6 +644,13 @@
         Name="LongRunningMethod" />
       <ScreenMethod
         Name="SelectFileMethod" />
+      <ScreenMethod
+        Name="TestDataItemListAddAndEditNew">
+        <ScreenMethod.Attributes>
+          <BuiltInMethodOverride
+            MethodName="AddAndEditNew" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

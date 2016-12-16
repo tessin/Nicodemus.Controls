@@ -36,6 +36,13 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="NullableDateTimeField"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="DateTimeField"
         PropertyType=":DateTime">
         <EntityProperty.Attributes>

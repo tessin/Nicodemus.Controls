@@ -19,8 +19,8 @@
     <LightSwitchVersion>v5.0</LightSwitchVersion>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <SupportedCultures>en-US</SupportedCultures>
+    <DefaultLanguage>en-us</DefaultLanguage>
+    <SupportedCultures>en-us</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>Nicodemus.Controls.Test.DesktopClient.xap</XapFilename>

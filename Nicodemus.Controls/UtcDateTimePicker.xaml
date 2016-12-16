@@ -10,7 +10,7 @@
 
     <Style x:Key="UtcDateTimePickerTimePickerStyle" TargetType="toolkit:TimePicker">
         <Setter Property="IsTabStop" Value="False"/>
-        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="MinWidth" Value="74"/>
         <Setter Property="Height" Value="22"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Background" Value="Transparent"/>

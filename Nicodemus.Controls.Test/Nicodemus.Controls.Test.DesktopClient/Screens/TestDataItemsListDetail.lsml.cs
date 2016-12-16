@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -22,15 +23,14 @@ namespace LightSwitchApplication
         {
             _busyIndicator = new BusyIndicator(this);
 
-            this.FindControl("DateTimeField").ControlAvailable += (s, e) =>
+            UtcDateTimeLabel.DefaultTimeZoneOffset = TimeSpan.Zero;
+
+            this.FindControl("DateTimeLabel").ControlAvailable += (s, e) =>
             {
-                ((UtcDateTimePicker)e.Control).TimeZoneOffset = TimeSpan.FromHours(2);
-            };
-            this.FindControl("DateTimeField1").ControlAvailable += (s, e) =>
-            {
-                ((UtcDateTimeLabel)e.Control).TimeZoneOffset = TimeSpan.FromHours(2);
+                ((UtcDateTimeLabel)e.Control).TimeZoneOffset = TimeSpan.FromHours(5);
                 ((UtcDateTimeLabel)e.Control).Format = "g";
             };
+
             this.FindControl("LinkTextField").ControlAvailable += (s, e) =>
             {
                 ((LinkButton)e.Control).Click += (sender, args) =>
@@ -38,6 +38,7 @@ namespace LightSwitchApplication
                     MessageBox.Show(((LinkButton)sender).Content.ToString());
                 };
             };
+
             this.FindControl("MyConditionalStyledLabel").ControlAvailable += (s, e) =>
             {
                 ((ConditionalStyledLabel)e.Control).ConditionalForeground = new SolidColorBrush(Colors.Red);

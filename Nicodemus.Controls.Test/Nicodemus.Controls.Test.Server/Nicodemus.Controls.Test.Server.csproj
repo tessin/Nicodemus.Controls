@@ -15,8 +15,8 @@
     <AssemblyName>Application.Server</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <LightSwitchVersion>v5.0</LightSwitchVersion>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <SupportedCultures>en-US</SupportedCultures>
+    <DefaultLanguage>en-us</DefaultLanguage>
+    <SupportedCultures>en-us</SupportedCultures>
     <FileAlignment>512</FileAlignment>
     <IgnoreDeployManagedRuntimeVersion>True</IgnoreDeployManagedRuntimeVersion>
     <UseDeclareParametersXMLInMsDeploy>False</UseDeclareParametersXMLInMsDeploy>
@@ -200,7 +200,9 @@
     </LightSwitchModel>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <LightSwitchModel Include="Properties\DataSources\ApplicationData.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\TestDataItems.lsml" />
     <None Include="Web.Debug.config">

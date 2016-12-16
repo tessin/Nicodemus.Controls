@@ -55,13 +55,13 @@
               <ContentItem
                 Name="DateTimeField"
                 Kind="Value"
-                DataType=":DateTime"
+                DataType=":DateTime?"
                 View="Microsoft.LightSwitch.RichClient:DateTimePicker">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="TestDataItem/Properties[DateTimeField]" />
+                        Member="TestDataItem/Properties[NullableDateTimeField]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -69,13 +69,13 @@
               <ContentItem
                 Name="DateTimeField1"
                 Kind="Value"
-                DataType=":DateTime"
+                DataType=":DateTime?"
                 View="Microsoft.LightSwitch.RichClient:ValueCustomContentControl">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="TestDataItem/Properties[DateTimeField]" />
+                        Member="TestDataItem/Properties[NullableDateTimeField]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
