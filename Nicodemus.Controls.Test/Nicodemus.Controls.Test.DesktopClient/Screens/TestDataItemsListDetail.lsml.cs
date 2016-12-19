@@ -23,13 +23,13 @@ namespace LightSwitchApplication
         {
             _busyIndicator = new BusyIndicator(this);
 
-            UtcDateTimeLabel.DefaultTimeZoneOffset = TimeSpan.Zero;
-
-            this.FindControl("DateTimeLabel").ControlAvailable += (s, e) =>
-            {
-                ((UtcDateTimeLabel)e.Control).TimeZoneOffset = TimeSpan.FromHours(5);
-                ((UtcDateTimeLabel)e.Control).Format = "g";
-            };
+            UtcDateTimePicker.DefaultTimeZoneOffset = TimeSpan.Zero;
+            
+            //this.FindControl("DateTimeLabel").ControlAvailable += (s, e) =>
+            //{
+            //    ((UtcDateTimeLabel)e.Control).TimeZoneOffset = TimeSpan.FromHours(5);
+            //    ((UtcDateTimeLabel)e.Control).Format = "g";
+            //};
 
             this.FindControl("LinkTextField").ControlAvailable += (s, e) =>
             {

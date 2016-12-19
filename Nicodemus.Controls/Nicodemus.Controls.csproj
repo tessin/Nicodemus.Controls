@@ -138,7 +138,7 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>$(ProjectDir)nuget.exe pack $(ProjectDir)Nicodemus.Controls.csproj
-xcopy /y/i $(TargetDir)*.nupkg C:\PackageSource
+rem xcopy /y/i $(TargetDir)*.nupkg C:\PackageSource
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
