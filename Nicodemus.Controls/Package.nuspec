@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/tessin/Nicodemus.Controls</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A collection of lightswitch controls including time zone aware date pickers and labels, selectable label, as well as a custom busy indicator.</description>
-    <releaseNotes>Added file select control.</releaseNotes>
+    <releaseNotes>Improved null handling for datetime controls.</releaseNotes>
     <copyright>Copyright © 2016 Tessin Nordic AB</copyright>
     <tags>Lightswitch</tags>
     <frameworkAssemblies>
