@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Threading;
 using System.Windows;
 using System.Windows.Data;
@@ -21,6 +22,8 @@ namespace Nicodemus.Controls
         public static TimeSpan DefaultTimeZoneOffset { get; set; }
 
         public static string DefaultFormat { get; set; }
+
+        public static CultureInfo DefaultCulture { get; set; }
 
         public TimeSpan? TimeZoneOffset
         {
@@ -47,8 +50,10 @@ namespace Nicodemus.Controls
         static UtcDateTimeLabel()
         {
             DefaultTimeZoneOffset = DateTime.Now.UtcOffset();
+            DefaultCulture = Thread.CurrentThread.CurrentCulture;
             DefaultFormat = "g";
         }
+        
 
         public UtcDateTimeLabel()
         {
@@ -76,7 +81,7 @@ namespace Nicodemus.Controls
         {
             var local = Value?.SumWithoutOverflow(TimeZoneOffset ?? TimeSpan.Zero);
             Text = local.HasValue ? local.Value.ToString(!string.IsNullOrWhiteSpace(Format) ? 
-                Format : DefaultFormat) : "";
+                Format : DefaultFormat, DefaultCulture) : "";
         }
 
     }

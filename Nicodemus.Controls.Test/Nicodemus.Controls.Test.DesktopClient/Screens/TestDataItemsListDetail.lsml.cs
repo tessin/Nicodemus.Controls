@@ -24,7 +24,8 @@ namespace LightSwitchApplication
             _busyIndicator = new BusyIndicator(this);
 
             UtcDateTimePicker.DefaultTimeZoneOffset = TimeSpan.Zero;
-            
+            UtcDateTimeLabel.DefaultCulture = new CultureInfo("sv-SE");
+
             //this.FindControl("DateTimeLabel").ControlAvailable += (s, e) =>
             //{
             //    ((UtcDateTimeLabel)e.Control).TimeZoneOffset = TimeSpan.FromHours(5);
