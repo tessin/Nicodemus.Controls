@@ -11,9 +11,15 @@ namespace Nicodemus.Controls
 {
     public class BusyIndicator
     {
+
+        // These may have to changed in the future. Disassemble 
+        // 'Microsoft.LightSwitch.ExportProvider.dll' and look 
+        // in the static Scopes class for these Guids.
+        private static readonly Guid GlobalGuid = new Guid("229C0B13-97A2-41BE-B96D-3CDDB9E8E389");
+        private static readonly Guid LocalGuid = new Guid("92E1D6FA-CAD7-400f-914D-E265294841B4");
+
         private static readonly IScreenViewService ScreenViewService =
             VsExportProviderService.GetServiceFromCache<IScreenViewService>(GetScope());
-
         private readonly IBusyIndicatorHost _busyIndicatorHost;
         private bool _isBusy;
 
@@ -30,28 +36,13 @@ namespace Nicodemus.Controls
 
         public BusyIndicator(IScreenObject screenObject)
         {
-            _busyIndicatorHost = (IBusyIndicatorHost)ScreenViewService.GetScreenView(screenObject);
+            _busyIndicatorHost = (IBusyIndicatorHost) ScreenViewService.GetScreenView(screenObject);
         }
 
         private static VsExportProvisionScope GetScope()
         {
-            const string assemblyName = "Microsoft.LightSwitch.ExportProvider";
-            var assembly = AppDomain.CurrentDomain.GetAssemblies().SingleOrDefault(a => a.FullName.StartsWith(assemblyName));
-            if (assembly == null)
-                throw new DllNotFoundException($"\"{assemblyName}\" is not found.");
-
-            const string typeName = "Microsoft.VisualStudio.ExtensibilityHosting.Scopes";
-            var type = assembly.GetType(typeName);
-            if (type == null)
-                throw new TypeLoadException($"Cannot load \"{typeName}\"");
-
-            var localGuid = (Guid)type.GetField(
-                "localGuid", BindingFlags.NonPublic | BindingFlags.Static)
-                .GetValue(null);
-            var global = (VsExportProvisionScope)type.GetProperty(
-                "Global", BindingFlags.NonPublic | BindingFlags.Static)
-                .GetValue(null, null);
-            return new VsExportProvisionOuterScope(localGuid, global);
+            var globalScope = new VsExportProvisionScope(GlobalGuid);
+            return new VsExportProvisionOuterScope(LocalGuid, globalScope);
         }
 
         private void SetBusyState()
