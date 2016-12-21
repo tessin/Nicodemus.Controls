@@ -34,6 +34,16 @@ namespace Nicodemus.Controls
             }
         }
 
+        public void Show()
+        {
+            IsBusy = true;
+        }
+
+        public void Hide()
+        {
+            IsBusy = false;
+        }
+
         public BusyIndicator(IScreenObject screenObject)
         {
             _busyIndicatorHost = (IBusyIndicatorHost) ScreenViewService.GetScreenView(screenObject);
