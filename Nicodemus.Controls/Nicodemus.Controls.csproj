@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusyIndicator.cs" />
+    <Compile Include="BusyWaiter.cs" />
     <Compile Include="ConditionalStyledLabel.cs" />
     <Compile Include="Converters\DatePickerOnlyDateConverter.cs" />
     <Compile Include="Helpers\DateTimeExtensions.cs" />
@@ -137,7 +138,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)nuget.exe pack $(ProjectDir)Nicodemus.Controls.csproj
+    <PostBuildEvent>$(ProjectDir)nuget.exe pack $(ProjectDir)Nicodemus.Controls.csproj -Prop Configuration=Release
 xcopy /y/i $(TargetDir)*.nupkg C:\PackageSource
 </PostBuildEvent>
   </PropertyGroup>

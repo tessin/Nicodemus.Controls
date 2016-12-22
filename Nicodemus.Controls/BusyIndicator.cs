@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Windows;
 using Microsoft.LightSwitch.Client;
 using Microsoft.LightSwitch.Runtime.Shell.View;
@@ -9,6 +10,7 @@ using Microsoft.VisualStudio.ExtensibilityHosting;
 
 namespace Nicodemus.Controls
 {
+    [Obsolete("This particular approach only seemed to work but does in fact not. Replace with BusyWaiter for long running background tasks.", false)]
     public class BusyIndicator
     {
 
@@ -36,7 +38,12 @@ namespace Nicodemus.Controls
 
         public void Show()
         {
+            
             IsBusy = true;
+            // Strangely seems required to 
+            // provoke the busy indicator 
+            // to show.
+            Thread.Sleep(1000);
         }
 
         public void Hide()

@@ -5,6 +5,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using Microsoft.LightSwitch;
@@ -16,13 +17,10 @@ namespace LightSwitchApplication
 {
     public partial class TestDataItemsListDetail
     {
-        private BusyIndicator _busyIndicator;
         private SelectFile _fileSelector;
 
         partial void TestDataItemsListDetail_Activated()
         {
-            _busyIndicator = new BusyIndicator(this);
-
             UtcDateTimePicker.DefaultTimeZoneOffset = TimeSpan.Zero;
             UtcDateTimeLabel.DefaultCulture = new CultureInfo("sv-SE");
 
@@ -89,9 +87,13 @@ namespace LightSwitchApplication
 
         partial void LongRunningMethod_Execute()
         {
-            _busyIndicator.IsBusy = true;
-            Thread.Sleep(10000);
-            _busyIndicator.IsBusy = false;
+            var waiter = new BusyWaiter(60000);
+            Task.Factory.StartNew(() =>
+            {
+                Thread.Sleep(10000);
+                waiter.Cancel();
+            });
+            waiter.Start();
         }
 
     }
