@@ -235,6 +235,7 @@
     </ServiceMetadataReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\PropertyWindowDemoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screens\TestDataItemsGrid.lsml.cs">
       <DependentUpon>TestDataItemsGrid.lsml</DependentUpon>
