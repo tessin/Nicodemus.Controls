@@ -62,6 +62,13 @@
         Name="XmlField"
         PropertyType=":String?" />
       <EntityProperty
+        Name="ComputedTextField"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
         PropertyType=":Person?">

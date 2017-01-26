@@ -38,6 +38,14 @@ namespace LightSwitchApplication
                 };
             };
 
+            this.FindControl("ComputedTextField").ControlAvailable += (s, e) =>
+            {
+                ((LinkButton)e.Control).Click += (sender, args) =>
+                {
+                    MessageBox.Show(((LinkButton)sender).Content.ToString());
+                };
+            };
+
             this.FindControl("MyConditionalStyledLabel").ControlAvailable += (s, e) =>
             {
                 ((ConditionalStyledLabel)e.Control).ConditionalForeground = new SolidColorBrush(Colors.Red);

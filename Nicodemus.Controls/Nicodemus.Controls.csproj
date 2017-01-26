@@ -90,6 +90,7 @@
     <Compile Include="ConditionalStyledLabel.cs" />
     <Compile Include="Converters\DatePickerOnlyDateConverter.cs" />
     <Compile Include="Helpers\DateTimeExtensions.cs" />
+    <Compile Include="Helpers\VisualTreeHelperExt.cs" />
     <Compile Include="LinkButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectableLabel.cs" />
@@ -125,10 +126,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UtcDateTimePicker.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="XmlEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
