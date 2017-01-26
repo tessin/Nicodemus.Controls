@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Markup;
 using Microsoft.LightSwitch.Presentation.Utilities.Internal;
-using Nicodemus.Controls.Helpers;
+using Nicodemus.Controls.Common;
 
 namespace Nicodemus.Controls
 {

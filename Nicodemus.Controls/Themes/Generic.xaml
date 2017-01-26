@@ -2,8 +2,8 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Nicodemus.Controls;component/SelectableLabel.xaml"/>
-        <ResourceDictionary Source="/Nicodemus.Controls;component/UtcDateTimeLabel.xaml"/>
-        <ResourceDictionary Source="/Nicodemus.Controls;component/UtcDateTimePicker.xaml"/>
+        <ResourceDictionary Source="/Nicodemus.Controls;component/Labels/SelectableLabel.xaml"/>
+        <ResourceDictionary Source="/Nicodemus.Controls;component/DateTime/UtcDateTimeLabel.xaml"/>
+        <ResourceDictionary Source="/Nicodemus.Controls;component/DateTime/UtcDateTimePicker.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

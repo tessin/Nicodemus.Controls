@@ -85,35 +85,35 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusyIndicator.cs" />
-    <Compile Include="BusyWaiter.cs" />
-    <Compile Include="ConditionalStyledLabel.cs" />
-    <Compile Include="Converters\DatePickerOnlyDateConverter.cs" />
-    <Compile Include="Helpers\DateTimeExtensions.cs" />
-    <Compile Include="Helpers\VisualTreeHelperExt.cs" />
-    <Compile Include="LinkButton.cs" />
+    <Compile Include="Busy\BusyIndicator.cs" />
+    <Compile Include="Busy\BusyWaiter.cs" />
+    <Compile Include="Labels\ConditionalStyledLabel.cs" />
+    <Compile Include="Common\DatePickerOnlyDateConverter.cs" />
+    <Compile Include="Common\DateTimeExtensions.cs" />
+    <Compile Include="Common\VisualTreeHelperExt.cs" />
+    <Compile Include="Buttons\LinkButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectableLabel.cs" />
-    <Compile Include="SelectFile.xaml.cs">
+    <Compile Include="Labels\SelectableLabel.cs" />
+    <Compile Include="Files\SelectFile.xaml.cs">
       <DependentUpon>SelectFile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SelectFileWindow.xaml.cs">
+    <Compile Include="Files\SelectFileWindow.xaml.cs">
       <DependentUpon>SelectFileWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UtcDateTimeLabel.cs" />
-    <Compile Include="UtcDateTimePicker.cs" />
-    <Compile Include="XmlEditor.cs" />
+    <Compile Include="DateTime\UtcDateTimeLabel.cs" />
+    <Compile Include="DateTime\UtcDateTimePicker.cs" />
+    <Compile Include="Editors\XmlEditor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="SelectableLabel.xaml">
+    <Page Include="Labels\SelectableLabel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SelectFile.xaml">
+    <Page Include="Files\SelectFile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SelectFileWindow.xaml">
+    <Page Include="Files\SelectFileWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -121,11 +121,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UtcDateTimeLabel.xaml">
+    <Page Include="DateTime\UtcDateTimeLabel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UtcDateTimePicker.xaml">
+    <Page Include="DateTime\UtcDateTimePicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

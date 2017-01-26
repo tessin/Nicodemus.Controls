@@ -4,7 +4,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
-using Nicodemus.Controls.Helpers;
+using Nicodemus.Controls.Common;
 
 namespace Nicodemus.Controls
 {

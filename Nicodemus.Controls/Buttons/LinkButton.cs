@@ -2,7 +2,7 @@
 using System.Windows.Data;
 using Microsoft.LightSwitch.Presentation.Framework;
 using Microsoft.LightSwitch.Presentation.Implementation.Controls;
-using Nicodemus.Controls.Helpers;
+using Nicodemus.Controls.Common;
 
 namespace Nicodemus.Controls
 {

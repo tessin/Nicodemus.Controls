@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nicodemus.Controls.Helpers
+namespace Nicodemus.Controls.Common
 {
     internal static class DateTimeExtensions
     {

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Media;
 
-namespace Nicodemus.Controls.Helpers
+namespace Nicodemus.Controls.Common
 {
     public static class VisualTreeHelperExt
     {

@@ -4,9 +4,9 @@
     xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
     xmlns:controls="clr-namespace:Nicodemus.Controls"
     xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
-    xmlns:converters="clr-namespace:Nicodemus.Controls.Converters">
+    xmlns:common="clr-namespace:Nicodemus.Controls.Common">
 
-    <converters:DatePickerOnlyDateConverter x:Key="DatePickerOnlyDateConverter"/>
+    <common:DatePickerOnlyDateConverter x:Key="DatePickerOnlyDateConverter"/>
 
     <Style x:Key="UtcDateTimePickerTimePickerStyle" TargetType="toolkit:TimePicker">
         <Setter Property="IsTabStop" Value="False"/>

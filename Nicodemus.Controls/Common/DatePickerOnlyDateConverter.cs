@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace Nicodemus.Controls.Converters
+namespace Nicodemus.Controls.Common
 {
     // http://stackoverflow.com/a/4072813/860913
     public class DatePickerOnlyDateConverter : IValueConverter
