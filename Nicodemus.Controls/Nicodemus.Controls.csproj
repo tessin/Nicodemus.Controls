@@ -101,7 +101,7 @@
     </Compile>
     <Compile Include="UtcDateTimeLabel.cs" />
     <Compile Include="UtcDateTimePicker.cs" />
-    <Compile Include="XmlEditorTest.cs" />
+    <Compile Include="XmlEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="SelectableLabel.xaml">
@@ -125,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UtcDateTimePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XmlEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
