@@ -662,6 +662,18 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
+                <ContentItem
+                  Name="ShowPropertyWindow"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="TestDataItemsListDetail/Methods[ShowPropertyWindow]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
               </ContentItem.CommandItems>
               <ContentItem.PropertySources>
                 <ControlPropertySource
@@ -768,6 +780,8 @@
             MethodName="AddAndEditNew" />
         </ScreenMethod.Attributes>
       </ScreenMethod>
+      <ScreenMethod
+        Name="ShowPropertyWindow" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

@@ -8,10 +8,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Threading;
+using LightSwitchApplication.Models;
 using Microsoft.LightSwitch;
 using Microsoft.LightSwitch.Presentation;
 using Microsoft.LightSwitch.Presentation.Extensions;
 using Nicodemus.Controls;
+using Nicodemus.Controls.Dialogs;
 
 namespace LightSwitchApplication
 {
@@ -104,5 +107,9 @@ namespace LightSwitchApplication
             waiter.Start();
         }
 
+        partial void ShowPropertyWindow_Execute()
+        {
+            new PropertyWindowBuilder().Show(new PropertyWindowDemoViewModel(), "Title of Window");
+        }
     }
 }
