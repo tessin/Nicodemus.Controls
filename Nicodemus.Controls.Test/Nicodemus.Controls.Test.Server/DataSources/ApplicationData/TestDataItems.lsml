@@ -59,6 +59,9 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="XmlField"
+        PropertyType=":String?" />
+      <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
         PropertyType=":Person?">

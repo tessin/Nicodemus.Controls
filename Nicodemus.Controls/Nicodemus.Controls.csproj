@@ -49,6 +49,10 @@
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="com.bodurov.SilverlightControls.XmlCodeEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\com.bodurov.SilverlightControls.XmlCodeEditor.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.LightSwitch">
       <HintPath>C:\Program Files (x86)\Microsoft SDKs\LightSwitch\v5.0\Client\Microsoft.LightSwitch.dll</HintPath>
     </Reference>
@@ -97,6 +101,7 @@
     </Compile>
     <Compile Include="UtcDateTimeLabel.cs" />
     <Compile Include="UtcDateTimePicker.cs" />
+    <Compile Include="XmlEditorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="SelectableLabel.xaml">
