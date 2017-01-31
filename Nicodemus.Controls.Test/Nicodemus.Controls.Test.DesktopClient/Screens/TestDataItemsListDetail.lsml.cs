@@ -8,12 +8,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Threading;
 using LightSwitchApplication.Models;
 using Microsoft.LightSwitch;
 using Microsoft.LightSwitch.Presentation;
 using Microsoft.LightSwitch.Presentation.Extensions;
 using Nicodemus.Controls;
+using Nicodemus.Controls.Checkboxes;
 using Nicodemus.Controls.Dialogs;
 
 namespace LightSwitchApplication
@@ -54,6 +54,11 @@ namespace LightSwitchApplication
                 ((ConditionalStyledLabel)e.Control).ConditionalForeground = new SolidColorBrush(Colors.Red);
                 ((ConditionalStyledLabel)e.Control).ConditionalFontWeight = FontWeights.Bold;
                 ((ConditionalStyledLabel)e.Control).OnEvaluate = obj => ((TestDataItem)obj).BooleanField;
+            };
+
+            this.FindControl("WarningBooleanField").ControlAvailable += (s, e) =>
+            {
+                ((WarningCheckBox)e.Control).DisplayWarning = () => ((WarningCheckBox)e.Control).IsChecked ?? false;
             };
         }
 

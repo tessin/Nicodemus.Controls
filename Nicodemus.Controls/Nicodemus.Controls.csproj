@@ -89,10 +89,12 @@
   <ItemGroup>
     <Compile Include="Busy\BusyIndicator.cs" />
     <Compile Include="Busy\BusyWaiter.cs" />
+    <Compile Include="Common\BoolToVisibilityConverter.cs" />
+    <Compile Include="Checkboxes\WarningCheckBox.cs" />
     <Compile Include="Dialogs\PropertyWindowBuilder.cs" />
     <Compile Include="Labels\ConditionalStyledLabel.cs" />
-    <Compile Include="Common\DatePickerOnlyDateConverter.cs" />
-    <Compile Include="Common\DateTimeExtensions.cs" />
+    <Compile Include="DateTime\DatePickerOnlyDateConverter.cs" />
+    <Compile Include="DateTime\DateTimeExtensions.cs" />
     <Compile Include="Common\VisualTreeHelperExt.cs" />
     <Compile Include="Buttons\LinkButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +115,10 @@
     <Compile Include="Dialogs\PropertyWindowModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Checkboxes\WarningCheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dialogs\PropertyWindowStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
