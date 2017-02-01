@@ -1,9 +1,11 @@
 ﻿using com.bodurov.SilverlightControls.XmlCodeEditor;
 using Microsoft.LightSwitch.Presentation.Implementation;
 using Nicodemus.Controls.Common;
+using System;
 using System.IO;
 using System.Text;
 using System.Windows;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace Nicodemus.Controls.Editors
@@ -14,6 +16,7 @@ namespace Nicodemus.Controls.Editors
         private readonly XmlCodeEditorBox _editor;
 
         public bool IsXmlValidationEnabled { get; set; }
+        public event Action<XmlException> XmlValidationError;
 
         public XmlTextEditor()
         {
@@ -31,7 +34,22 @@ namespace Nicodemus.Controls.Editors
                 // validate XML, let the exception propagate
                 if (IsXmlValidationEnabled)
                 {
-                    XDocument.Load(new StringReader(text), LoadOptions.SetLineInfo);
+                    try
+                    {
+                        XDocument.Load(new StringReader(text), LoadOptions.SetLineInfo);
+                    }
+                    catch (XmlException ex)
+                    {
+                        var xmlValidationError = XmlValidationError;
+                        if (xmlValidationError != null)
+                        {
+                            xmlValidationError(ex);
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
                 }
 
                 var text2 = NormalizeLineEndings(ContentItem.Value as string);

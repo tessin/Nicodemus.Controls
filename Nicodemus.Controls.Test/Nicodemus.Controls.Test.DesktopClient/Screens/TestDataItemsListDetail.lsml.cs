@@ -15,6 +15,7 @@ using Microsoft.LightSwitch.Presentation.Extensions;
 using Nicodemus.Controls;
 using Nicodemus.Controls.Checkboxes;
 using Nicodemus.Controls.Dialogs;
+using Nicodemus.Controls.Editors;
 
 namespace LightSwitchApplication
 {
@@ -59,6 +60,15 @@ namespace LightSwitchApplication
             this.FindControl("WarningBooleanField").ControlAvailable += (s, e) =>
             {
                 ((WarningCheckBox)e.Control).DisplayWarning = () => ((WarningCheckBox)e.Control).IsChecked ?? false;
+            };
+
+            this.FindControl("XmlField2").ControlAvailable += (sender, e) =>
+            {
+                ((XmlTextEditor)e.Control).IsXmlValidationEnabled = true;
+                ((XmlTextEditor)e.Control).XmlValidationError += (err) =>
+                {
+                    this.ShowMessageBox(err.Message, "XML Error", MessageBoxOption.Ok);
+                };
             };
         }
 
