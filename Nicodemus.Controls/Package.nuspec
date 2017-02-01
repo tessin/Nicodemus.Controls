@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Tessin.Lightswitch.Controls</id>
-    <version>1.1.6</version>
+    <version>1.1.7</version>
     <authors>Aleksey Shubin, Thomas Bladh</authors>
     <owners>Tessin Nordic AB</owners>
     <licenseUrl>https://github.com/tessin/Nicodemus.Controls/blob/master/LICENSE.txt</licenseUrl>
@@ -25,4 +25,7 @@
       <frameworkAssembly assemblyName="System.Xml" />
     </frameworkAssemblies>
   </metadata>
+  <files>
+    <file src="bin\$configuration$\com.bodurov.SilverlightControls.XmlCodeEditor.dll" target="lib\sl5" />
+  </files>
 </package>

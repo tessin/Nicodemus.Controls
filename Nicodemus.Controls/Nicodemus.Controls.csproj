@@ -46,7 +46,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="com.bodurov.SilverlightControls.XmlCodeEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -85,13 +85,16 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Busy\BusyIndicator.cs" />
     <Compile Include="Busy\BusyWaiter.cs" />
     <Compile Include="Common\BoolToVisibilityConverter.cs" />
     <Compile Include="Checkboxes\WarningCheckBox.cs" />
+    <Compile Include="Common\UserContentItemControl.cs" />
     <Compile Include="Dialogs\PropertyWindowBuilder.cs" />
+    <Compile Include="Editors\XmlTextEditor.cs" />
     <Compile Include="Labels\ConditionalStyledLabel.cs" />
     <Compile Include="DateTime\DatePickerOnlyDateConverter.cs" />
     <Compile Include="DateTime\DateTimeExtensions.cs" />
@@ -107,7 +110,6 @@
     </Compile>
     <Compile Include="DateTime\UtcDateTimeLabel.cs" />
     <Compile Include="DateTime\UtcDateTimePicker.cs" />
-    <Compile Include="Editors\XmlEditor.cs" />
     <Compile Include="Dialogs\PropertyWindow.xaml.cs">
       <DependentUpon>PropertyWindow.xaml</DependentUpon>
     </Compile>
@@ -167,8 +169,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)nuget.exe pack $(ProjectDir)Nicodemus.Controls.csproj -Prop Configuration=Release
-xcopy /y/i $(TargetDir)*.nupkg C:\PackageSource
+    <PostBuildEvent>$(ProjectDir)nuget.exe pack $(ProjectDir)Package.nuspec -Prop Configuration=$(ConfigurationName)
+xcopy /y/i $(TargetDir)*.nupkg %25localappdata%25\Tessin\Packages
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
