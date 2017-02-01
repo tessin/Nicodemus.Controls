@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Tessin.Lightswitch.Controls</id>
-    <version>1.1.7</version>
+    <version>1.1.8</version>
     <authors>Aleksey Shubin, Thomas Bladh</authors>
     <owners>Tessin Nordic AB</owners>
     <licenseUrl>https://github.com/tessin/Nicodemus.Controls/blob/master/LICENSE.txt</licenseUrl>
@@ -26,6 +26,8 @@
     </frameworkAssemblies>
   </metadata>
   <files>
+    <!--if the assembly is not in the list below it will not get included in the NuGet package-->
     <file src="bin\$configuration$\com.bodurov.SilverlightControls.XmlCodeEditor.dll" target="lib\sl5" />
+    <file src="bin\$configuration$\Nicodemus.Controls.dll" target="lib\sl5" />
   </files>
 </package>
