@@ -91,6 +91,9 @@
   <ItemGroup>
     <Compile Include="Busy\BusyIndicator.cs" />
     <Compile Include="Busy\BusyWaiter.cs" />
+    <Compile Include="Busy\Spinner.xaml.cs">
+      <DependentUpon>Spinner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Busy\WaitWindow.xaml.cs">
       <DependentUpon>WaitWindow.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
     <Compile Include="Dialogs\PropertyWindowModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Busy\Spinner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Busy\WaitWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

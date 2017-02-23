@@ -15,7 +15,7 @@ namespace Nicodemus.Controls.Busy
             {
                 _instance = new WaitWindow();
                 _instance.Title = title;
-                _instance.MessageBox.Text = message;
+                //_instance.MessageBox.Text = message;
                 ((ChildWindow)_instance).Show();
             });
         }

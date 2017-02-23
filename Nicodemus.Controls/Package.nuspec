@@ -2,8 +2,8 @@
 <package >
   <metadata>
     <id>Tessin.Lightswitch.Controls</id>
-    <version>1.1.15</version>
-    <authors>Aleksey Shubin, Thomas Bladh</authors>
+    <version>1.1.16</version>
+    <authors>Aleksey Shubin, Thomas Bladh, Niels Bosma</authors>
     <owners>Tessin Nordic AB</owners>
     <licenseUrl>https://github.com/tessin/Nicodemus.Controls/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/tessin/Nicodemus.Controls</projectUrl>

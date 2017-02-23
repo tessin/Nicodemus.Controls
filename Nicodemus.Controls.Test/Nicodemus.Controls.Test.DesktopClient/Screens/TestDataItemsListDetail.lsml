@@ -674,6 +674,18 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
+                <ContentItem
+                  Name="ShowBusyWindow"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="TestDataItemsListDetail/Methods[ShowBusyWindow]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
               </ContentItem.CommandItems>
               <ContentItem.PropertySources>
                 <ControlPropertySource
@@ -782,6 +794,8 @@
       </ScreenMethod>
       <ScreenMethod
         Name="ShowPropertyWindow" />
+      <ScreenMethod
+        Name="ShowBusyWindow" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

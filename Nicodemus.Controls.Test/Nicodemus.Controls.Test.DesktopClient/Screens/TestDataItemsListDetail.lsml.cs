@@ -7,12 +7,15 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Threading;
 using LightSwitchApplication.Models;
 using Microsoft.LightSwitch;
 using Microsoft.LightSwitch.Presentation;
 using Microsoft.LightSwitch.Presentation.Extensions;
 using Nicodemus.Controls;
+using Nicodemus.Controls.Busy;
 using Nicodemus.Controls.Checkboxes;
 using Nicodemus.Controls.Dialogs;
 using Nicodemus.Controls.Editors;
@@ -125,6 +128,11 @@ namespace LightSwitchApplication
         partial void ShowPropertyWindow_Execute()
         {
             new PropertyWindowBuilder().Show(new PropertyWindowDemoViewModel(), "Title of Window");
+        }
+
+        partial void ShowBusyWindow_Execute()
+        {
+            WaitWindow.Show();
         }
     }
 }
