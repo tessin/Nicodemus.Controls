@@ -28,6 +28,9 @@ namespace LightSwitchApplication
 
         partial void TestDataItemsListDetail_Activated()
         {
+
+            
+
             UtcDateTimePicker.DefaultTimeZoneOffset = TimeSpan.Zero;
             UtcDateTimeLabel.DefaultCulture = new CultureInfo("sv-SE");
 
@@ -84,16 +87,18 @@ namespace LightSwitchApplication
         private void SelectFileControl_ControlAvailable(object sender, ControlAvailableEventArgs e)
         {
             _fileSelector = e.Control as SelectFile;
-            if (_fileSelector != null)
+            var control = sender as IContentItemProxy;
+            if (control != null && _fileSelector != null)
             {
+                if (control.DisplayName == "Select File") _fileSelector.Filter = "pdf document (*.pdf)|*.pdf";
                 _fileSelector.TextChanged += _fileSelector_TextChanged;
             }
         }
 
         private void _fileSelector_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            var fileName = Path.GetFileName(_fileSelector.FileName);
-            var stream = _fileSelector.FileStream;
+            var fileName = Path.GetFileName(_fileSelector.File.Name);
+            var stream = _fileSelector.File.Stream;
             var sha1 = GetSha1(stream);
             this.ShowMessageBox($"Name:   '{fileName}'\n" +
                                 $"Length: '{stream.Length}'\n" +

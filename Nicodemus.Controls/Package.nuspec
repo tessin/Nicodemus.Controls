@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>Tessin.Lightswitch.Controls</id>
-    <version>1.1.16</version>
+    <version>1.1.17</version>
     <authors>Aleksey Shubin, Thomas Bladh, Niels Bosma</authors>
     <owners>Tessin Nordic AB</owners>
     <licenseUrl>https://github.com/tessin/Nicodemus.Controls/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/tessin/Nicodemus.Controls</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A collection of lightswitch controls including time zone aware date pickers and labels, selectable label, as well as a custom busy indicator.</description>
-    <releaseNotes>Replacing BusyIndicator with BusyWaiter.</releaseNotes>
+    <releaseNotes>Improved SelectFile control.</releaseNotes>
     <copyright>Copyright © 2016 Tessin Nordic AB</copyright>
     <tags>Lightswitch</tags>
     <frameworkAssemblies>

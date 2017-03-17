@@ -102,6 +102,9 @@
     <Compile Include="Common\UserContentItemControl.cs" />
     <Compile Include="Dialogs\PropertyWindowBuilder.cs" />
     <Compile Include="Editors\XmlTextEditor.cs" />
+    <Compile Include="Files\FileAvailableEventArgs.cs" />
+    <Compile Include="Files\FileSelector.cs" />
+    <Compile Include="Files\SelectedFile.cs" />
     <Compile Include="Labels\ConditionalStyledLabel.cs" />
     <Compile Include="DateTime\DatePickerOnlyDateConverter.cs" />
     <Compile Include="DateTime\DateTimeExtensions.cs" />
@@ -171,7 +174,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Package.nuspec" />
+    <None Include="Package.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
