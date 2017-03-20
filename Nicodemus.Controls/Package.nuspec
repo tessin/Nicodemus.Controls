@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Tessin.Lightswitch.Controls</id>
-    <version>1.1.17</version>
+    <version>1.1.19</version>
     <authors>Aleksey Shubin, Thomas Bladh, Niels Bosma</authors>
     <owners>Tessin Nordic AB</owners>
     <licenseUrl>https://github.com/tessin/Nicodemus.Controls/blob/master/LICENSE.txt</licenseUrl>
@@ -12,6 +12,10 @@
     <releaseNotes>Improved SelectFile control.</releaseNotes>
     <copyright>Copyright © 2016 Tessin Nordic AB</copyright>
     <tags>Lightswitch</tags>
+    <dependencies>
+      <dependency id="SilverlightToolkit-Core" version="4.2010.4" />
+      <dependency id="SilverlightToolkit-Input" version="4.2010.4" />
+    </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="mscorlib" />
       <frameworkAssembly assemblyName="system" />
