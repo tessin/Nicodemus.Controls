@@ -47,15 +47,28 @@ namespace Nicodemus.Controls
             DefaultTimeZoneOffset = DateTime.Now.UtcOffset();
         }
 
+        private readonly RoutedEventHandler _DatePicker_CalendarOpened;
+
         public UtcDateTimePicker()
         {
             DefaultStyleKey = typeof(UtcDateTimePicker);
+
+            _DatePicker_CalendarOpened = new RoutedEventHandler(DatePicker_CalendarOpened);
+
             Loaded += (s, e) =>
             {
-                SetBinding(ValueProperty, new Binding("Value") {Mode = BindingMode.TwoWay});
+                SetBinding(ValueProperty, new Binding("Value") { Mode = BindingMode.TwoWay });
 
                 var datePicker = this.FindVisualChildByType<DatePicker>();
-                datePicker.CalendarOpened += DatePicker_CalendarOpened;
+                datePicker.CalendarOpened += _DatePicker_CalendarOpened;
+            };
+
+            Unloaded += (s, e) =>
+            {
+                var datePicker = this.FindVisualChildByType<DatePicker>();
+                datePicker.CalendarOpened -= _DatePicker_CalendarOpened;
+
+                ClearValue(ValueProperty);
             };
         }
 
