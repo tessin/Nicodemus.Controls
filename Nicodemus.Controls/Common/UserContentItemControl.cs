@@ -5,6 +5,14 @@ using System.Windows.Controls;
 
 namespace Nicodemus.Controls.Common
 {
+    // note that when you base you control on the UserContentItemControl
+    // the data context is a LightSwitch ContentItem, if you want to bind
+    // to properties that you introduce on your control, you need to use
+    // the following data binding syntax
+    // {Binding Path=<dependency-property-name>, RelativeSource={RelativeSource AncestorType=UserControl}}
+    // the RelativeSource={RelativeSource AncestorType=UserControl} part is what tells Silverlight to bind
+    // with the UserControl as context and not the DataContext itself
+
     public abstract class UserContentItemControl : UserControl
     {
         private readonly PropertyChangedEventHandler _contentItemPropertyChanged;

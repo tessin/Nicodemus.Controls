@@ -18,8 +18,8 @@
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>false</SignManifests>
     <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
-    <ApplicationClientType>Desktop</ApplicationClientType>
-    <ApplicationServerType>LocalHost</ApplicationServerType>
+    <ApplicationClientType>Browser</ApplicationClientType>
+    <ApplicationServerType>IIS</ApplicationServerType>
     <AuthenticationType>None</AuthenticationType>
     <ApplicationName>Nicodemus.Controls.Test</ApplicationName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>

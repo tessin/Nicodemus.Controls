@@ -4,8 +4,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Nicodemus.Controls;component/Labels/SelectableLabel.xaml"/>
         <ResourceDictionary Source="/Nicodemus.Controls;component/DateTime/UtcDateTimeLabel.xaml"/>
-        <ResourceDictionary Source="/Nicodemus.Controls;component/DateTime/UtcDateTimePicker.xaml"/>
         <ResourceDictionary Source="/Nicodemus.Controls;component/Dialogs/PropertyWindowStyles.xaml"/>
-        <ResourceDictionary Source="/Nicodemus.Controls;component/Checkboxes/WarningCheckBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

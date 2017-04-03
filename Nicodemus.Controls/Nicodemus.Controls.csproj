@@ -97,9 +97,17 @@
     <Compile Include="Busy\WaitWindow.xaml.cs">
       <DependentUpon>WaitWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Checkboxes\CheckBoxItemControl.cs" />
+    <Compile Include="Checkboxes\WarningCheckBox.xaml.cs">
+      <DependentUpon>WarningCheckBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Common\BoolToVisibilityConverter.cs" />
-    <Compile Include="Checkboxes\WarningCheckBox.cs" />
     <Compile Include="Common\UserContentItemControl.cs" />
+    <Compile Include="DateTime\UtcDateTimePicker.xaml.cs">
+      <DependentUpon>UtcDateTimePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DateTime\UtcDateTimePickerDateConverter.cs" />
+    <Compile Include="DateTime\UtcDateTimePickerTimeConverter.cs" />
     <Compile Include="Dialogs\PropertyWindowBuilder.cs" />
     <Compile Include="Editors\XmlTextEditor.cs" />
     <Compile Include="Files\FileAvailableEventArgs.cs" />
@@ -119,7 +127,6 @@
       <DependentUpon>SelectFileWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DateTime\UtcDateTimeLabel.cs" />
-    <Compile Include="DateTime\UtcDateTimePicker.cs" />
     <Compile Include="Dialogs\PropertyWindow.xaml.cs">
       <DependentUpon>PropertyWindow.xaml</DependentUpon>
     </Compile>
@@ -136,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Checkboxes\WarningCheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DateTime\UtcDateTimePicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,10 +175,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="DateTime\UtcDateTimeLabel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DateTime\UtcDateTimePicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

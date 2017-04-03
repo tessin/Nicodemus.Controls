@@ -1,8 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<OutOfBrowserSettings ShortName="Nicodemus.Controls.Test.DesktopClient" EnableGPUAcceleration="False" ShowInstallMenuItem="False">
-  <OutOfBrowserSettings.Blurb>Nicodemus.Controls.Test.DesktopClient</OutOfBrowserSettings.Blurb>
+﻿<OutOfBrowserSettings ShortName="Nicodemus.Controls.Test" EnableGPUAcceleration="False" ShowInstallMenuItem="False">
+  <OutOfBrowserSettings.Blurb>Nicodemus.Controls.Test</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="Nicodemus.Controls.Test.DesktopClient" WindowStartupLocation="Manual" Top="0" Left="0"/>
+    <WindowSettings Title="Nicodemus.Controls.Test" Top="0" Left="0" WindowStartupLocation="Manual" />
   </OutOfBrowserSettings.WindowSettings>
   <OutOfBrowserSettings.SecuritySettings>
     <SecuritySettings ElevatedPermissions="Required" />

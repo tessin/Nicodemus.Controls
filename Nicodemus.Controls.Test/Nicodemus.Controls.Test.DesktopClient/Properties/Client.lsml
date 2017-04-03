@@ -42,11 +42,14 @@
     <ApplicationCommand
       Name="ScreenCommandShowTestDataItemsGrid"
       Target="!module/Methods[ShowTestDataItemsGrid]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowUtcDateTimePickerDetailsScreen"
+      Target="!module/Methods[ShowUtcDateTimePickerDetailsScreen]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
       Name="Tasks"
-      DefaultItem="!module/NavigationItems[Tasks]/Children[TestDataItemsListDetail]">
+      DefaultItem="!module/NavigationItems[Tasks]/Children[UtcDateTimePickerDetailsScreen]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Tasks" />
@@ -57,6 +60,9 @@
       <ApplicationNavigationLink
         Name="TestDataItemsGrid"
         Command="!module/Commands[ScreenCommandShowTestDataItemsGrid]" />
+      <ApplicationNavigationLink
+        Name="UtcDateTimePickerDetailsScreen"
+        Command="!module/Commands[ScreenCommandShowUtcDateTimePickerDetailsScreen]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

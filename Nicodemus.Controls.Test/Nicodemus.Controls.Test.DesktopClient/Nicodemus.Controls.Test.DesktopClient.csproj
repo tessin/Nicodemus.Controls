@@ -29,7 +29,7 @@
     <SilverlightAppEntry>
     </SilverlightAppEntry>
     <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
-    <EnableOutOfBrowser>True</EnableOutOfBrowser>
+    <EnableOutOfBrowser>False</EnableOutOfBrowser>
     <TestPageFileName>default.htm</TestPageFileName>
     <CreateTestPage>false</CreateTestPage>
     <ValidateXaml>true</ValidateXaml>
@@ -260,6 +260,7 @@
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\TestDataItemsListDetail.lsml" />
     <LightSwitchModel Include="Screens\TestDataItemsGrid.lsml" />
+    <LightSwitchModel Include="Screens\UtcDateTimePickerDetailsScreen.lsml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Nicodemus.Controls\Nicodemus.Controls.csproj">

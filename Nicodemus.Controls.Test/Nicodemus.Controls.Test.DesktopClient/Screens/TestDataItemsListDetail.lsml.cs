@@ -31,7 +31,7 @@ namespace LightSwitchApplication
 
             
 
-            UtcDateTimePicker.DefaultTimeZoneOffset = TimeSpan.Zero;
+            //UtcDateTimePicker.DefaultTimeZoneOffset = TimeSpan.Zero;
             UtcDateTimeLabel.DefaultCulture = new CultureInfo("sv-SE");
 
             //this.FindControl("DateTimeLabel").ControlAvailable += (s, e) =>
