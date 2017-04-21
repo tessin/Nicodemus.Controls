@@ -23,37 +23,84 @@
             Name="ListColumn"
             Kind="Group">
             <ContentItem
-              Name="TestDataItemList"
+              Name="UtcDateTimeRecords"
               Kind="Collection"
-              DataType="CollectionView$TestDataItem"
-              View="Microsoft.LightSwitch.RichClient:DataGrid">
+              DataType="CollectionView$UtcDateTimeRecord">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="UtcDateTimePickerDetailsScreen/Properties[TestDataItems]" />
+                      Member="UtcDateTimePickerDetailsScreen/Properties[UtcDateTimeRecords]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
-                Name="RowTemplate"
+                Name="UtcDateTimeRecordsTemplate"
                 Kind="Details"
-                DataType="TestDataItem">
+                DataType="UtcDateTimeRecord">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="NullableDateTimeField"
+                  Name="Id"
                   Kind="Value"
-                  DataType=":DateTime?"
-                  View="Microsoft.LightSwitch.RichClient:ValueCustomContentControl">
+                  DataType=":Int32">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="TestDataItem/Properties[NullableDateTimeField]" />
+                          Member="UtcDateTimeRecord/Properties[Id]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Text"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="UtcDateTimeRecord/Properties[Text]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="NullableUtcDateTimeValue"
+                  Kind="Value"
+                  DataType=":DateTime?"
+                  View="Microsoft.LightSwitch.RichClient:Label">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Label (LightSwitch)" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="UtcDateTimeRecord/Properties[NullableUtcDateTimeValue]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="NullableUtcDateTimeValue1"
+                  Kind="Value"
+                  DataType=":DateTime?"
+                  View="Microsoft.LightSwitch.RichClient:ValueCustomContentControl">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Label (Custom Control)" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="UtcDateTimeRecord/Properties[NullableUtcDateTimeValue]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -63,7 +110,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
-                            Value="Nicodemus.Controls.UtcDateTimePicker, Nicodemus.Controls"
+                            Value="Nicodemus.Controls.UtcDateTimeLabel, Nicodemus.Controls"
                             ResultType=":String" />
                         </ChainExpression>
                       </ScreenExpressionTree>
@@ -73,13 +120,13 @@
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
-                  Name="TestDataItems_AddAndEditNew"
+                  Name="UtcDateTimeRecords_AddAndEditNew"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="UtcDateTimePickerDetailsScreen/Properties[TestDataItems]" />
+                          Member="UtcDateTimePickerDetailsScreen/Properties[UtcDateTimeRecords]" />
                         <CallExpression
                           Target="AddAndEditNew" />
                       </ChainExpression>
@@ -87,13 +134,13 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="TestDataItems_EditSelected"
+                  Name="UtcDateTimeRecords_EditSelected"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="UtcDateTimePickerDetailsScreen/Properties[TestDataItems]" />
+                          Member="UtcDateTimePickerDetailsScreen/Properties[UtcDateTimeRecords]" />
                         <CallExpression
                           Target="EditSelected" />
                       </ChainExpression>
@@ -101,13 +148,13 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="TestDataItems_DeleteSelected"
+                  Name="UtcDateTimeRecords_DeleteSelected"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="UtcDateTimePickerDetailsScreen/Properties[TestDataItems]" />
+                          Member="UtcDateTimePickerDetailsScreen/Properties[UtcDateTimeRecords]" />
                         <CallExpression
                           Target="DeleteSelected" />
                       </ChainExpression>
@@ -115,28 +162,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
               </ContentItem.CommandItems>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="Collapsed"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="Stretch"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem.PropertySources>
               <ControlPropertySource
@@ -155,60 +180,33 @@
             Name="DetailsColumn"
             Kind="Group">
             <ContentItem
-              Name="TestDataItemDetails"
-              Kind="Details"
-              DataType="TestDataItem">
+              Name="UtcDateTimeRecords_SelectedItem_NullableUtcDateTimeValue1"
+              Kind="Value"
+              DataType=":DateTime?"
+              View="Microsoft.LightSwitch.RichClient:ValueCustomContentControl">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Test Data Item Details" />
+                  Value="UTC Date Time Picker" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="UtcDateTimePickerDetailsScreen/Properties[TestDataItems]" />
+                      Member="UtcDateTimePickerDetailsScreen/Properties[UtcDateTimeRecords]" />
                     <MemberExpression
                       Member="SelectedItem" />
+                    <MemberExpression
+                      Member="NullableUtcDateTimeValue" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
-              <ContentItem
-                Name="TestDataItems_SelectedItem_NullableDateTimeField"
-                Kind="Value"
-                DataType=":DateTime?"
-                View="Microsoft.LightSwitch.RichClient:ValueCustomContentControl">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="UtcDateTimePickerDetailsScreen/Properties[TestDataItems]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="NullableDateTimeField" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:RootCustomContentControl/Properties[CustomControl]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="Nicodemus.Controls.UtcDateTimePicker, Nicodemus.Controls"
-                          ResultType=":String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
               <ContentItem.PropertySources>
                 <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  Property="Microsoft.LightSwitch.RichClient:RootCustomContentControl/Properties[CustomControl]">
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <ConstantExpression
-                        Value="Top"
+                        Value="Nicodemus.Controls.UtcDateTimePicker, Nicodemus.Controls"
                         ResultType=":String" />
                     </ChainExpression>
                   </ScreenExpressionTree>
@@ -299,20 +297,20 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="TestDataItems"
+        Name="UtcDateTimeRecords"
         PageSize="45"
-        PropertyType="CollectionView$TestDataItem">
+        PropertyType="CollectionView$UtcDateTimeRecord">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="TestDataItemsQuery"
-            ReturnType="TestDataItem*">
+            Name="UtcDateTimeRecordsQuery"
+            ReturnType="UtcDateTimeRecord*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="ApplicationData/Members[TestDataItems]" />
+                  Member="ApplicationData/Members[UtcDateTimeRecords]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -320,7 +318,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="UtcDateTimePickerDetailsScreen/Properties[TestDataItems]/Query" />
+              Target="UtcDateTimePickerDetailsScreen/Properties[UtcDateTimeRecords]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>

@@ -23,7 +23,19 @@ namespace Nicodemus.Controls
 
         private static void OnTimeZoneChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ((UtcDateTimePicker)d).PushLocalAsUtc();
+
+        }
+
+        private DateTime ConvertLocalToUtc(DateTime localDateTime)
+        {
+            var utcOffset = TimeZone.GetUtcOffset(localDateTime);
+            return localDateTime - utcOffset;
+        }
+
+        private DateTime ConvertUtcToLocal(DateTime utcDateTime)
+        {
+            var utcOffset = TimeZone.GetUtcOffset(utcDateTime);
+            return utcDateTime + utcOffset;
         }
 
         //
@@ -75,7 +87,7 @@ namespace Nicodemus.Controls
 
         protected override void OnContentItemValueChanged(ContentItem contentItem, object value)
         {
-            System.Diagnostics.Debug.WriteLine($"{id_}: ContentItemValueChanged");
+            System.Diagnostics.Debug.WriteLine($"{id_}: ContentItemValueChanged Value={value}");
 
             SetLocalFromUtc(value as DateTime?);
         }
@@ -104,7 +116,7 @@ namespace Nicodemus.Controls
             }
             else
             {
-                var value2 = value.Value + TimeZone.BaseUtcOffset;
+                var value2 = ConvertUtcToLocal(value.Value);
 
                 datePicker.SelectedDate = value2;
                 timePicker.Value = value2;
@@ -115,17 +127,32 @@ namespace Nicodemus.Controls
         {
             if (ContentItem != null)
             {
-                // local time
-                var date = (datePicker.SelectedDate ?? DefaultDate).Date;
+                if (datePicker.SelectedDate == null)
+                {
+                    var currentValue = ContentItem.Value as DateTime?;
+                    if (currentValue != null)
+                    {
+                        ContentItem.Value = null;
+                    }
+                    return;
+                }
+
+                // local date & time
+                var date = datePicker.SelectedDate.Value.Date;
                 var time = timePicker.Value?.TimeOfDay ?? DefaultTimeOfDay;
 
-                // UTC time
-                var utcDateTime = date + (time - TimeZone.BaseUtcOffset);
+                var localDateAndTime = date + time;
 
-                var currentValue = ContentItem.Value as DateTime?;
-                if (currentValue != utcDateTime)
+                // UTC offset
+                var utcOffset = TimeZone.GetUtcOffset(localDateAndTime);
+
+                // UTC date & time
+                var utcDateAndTime = localDateAndTime - utcOffset;
+
+                var currentValue2 = ContentItem.Value as DateTime?;
+                if (currentValue2 != utcDateAndTime)
                 {
-                    ContentItem.Value = utcDateTime;
+                    ContentItem.Value = utcDateAndTime;
                 }
             }
         }

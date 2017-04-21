@@ -10,4 +10,10 @@
         Target="ServiceInterface:ApplicationData" />
     </EntityContainer.Attributes>
   </EntityContainer>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:UtcDateTimeRecord" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>
