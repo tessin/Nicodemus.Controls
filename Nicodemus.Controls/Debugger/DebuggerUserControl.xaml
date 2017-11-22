@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="Nicodemus.Controls.Debugger.DebuggerUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Nicodemus.Controls.Debugger"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400">
+    <UserControl.Resources>
+        <local:DebuggerValueConverter x:Key="debuggerValueConverter" />
+        <local:DebuggerPropertiesValueConverter x:Key="debuggerPropertiesValueConverter" />
+    </UserControl.Resources>
+    <StackPanel>
+        <!--
+These are all the properties exposed by the ContentItem, not all of them are useful
+        
+BindingPath
+ChildItems
+Choices
+ChoicesSourceRootDefinition
+CommandItems
+ContainerState
+ContentItemDefinition
+ContentItemKind
+DataError
+DataSourceRootDefinition
+Description
+Details
+DisplayName
+EffectiveParentItem
+FontStyle
+IsAvailable
+IsDisposed
+IsEnabled
+IsProcessing
+IsReadOnly
+IsVisible
+LastMemberModelItem
+Properties
+ResultingDataType
+ResultingModel
+Screen
+StringValue
+Value
+View
+-->
+        <TextBlock Text="BindingPath"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding BindingPath, Converter={StaticResource debuggerValueConverter}}" />
+
+        <TextBlock Text="DataError"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding DataError, Converter={StaticResource debuggerValueConverter}}" />
+
+        <TextBlock Text="Description"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding Description, Converter={StaticResource debuggerValueConverter}}" />
+
+        <TextBlock Text="DisplayName"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding DisplayName, Converter={StaticResource debuggerValueConverter}}" />
+
+        <TextBlock Text="IsEnabled"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding IsEnabled, Converter={StaticResource debuggerValueConverter}}" />
+
+        <TextBlock Text="IsReadOnly"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding IsReadOnly, Converter={StaticResource debuggerValueConverter}}" />
+
+        <TextBlock Text="IsVisible"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding IsVisible, Converter={StaticResource debuggerValueConverter}}" />
+
+        <TextBlock Text="Name"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding Name, Converter={StaticResource debuggerValueConverter}}" />
+
+        <TextBlock Text="Properties"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding Properties, Converter={StaticResource debuggerPropertiesValueConverter}}" />
+
+        <TextBlock Text="Screen"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding Screen, Converter={StaticResource debuggerValueConverter}}" />
+
+        <TextBlock Text="Value"
+                   FontWeight="Bold" />
+        <TextBlock Text="{Binding Value, Converter={StaticResource debuggerValueConverter}}" />
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Nicodemus.Controls.SelectableLabel2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="40"
+    d:DesignWidth="400">
+    <!--Background needs to be set for hit test to work (MouseEnter/Leave)-->
+    <ContentControl 
+        x:Name="contentControl"
+        IsEnabledChanged="contentControl_IsEnabledChanged"
+        >
+        <Grid Background="Transparent" 
+          MouseEnter="Grid_MouseEnter"     
+          MouseLeave="Grid_MouseLeave"
+          >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="24" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="textBox" 
+                 Text="{Binding Path=Value, Mode=OneWay}" 
+                 IsReadOnly="True" 
+                 >
+                <TextBox.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Border x:Name="MouseOverBorder" BorderThickness="1" BorderBrush="Transparent">
+                                <ScrollViewer x:Name="ContentElement" Padding="{TemplateBinding Padding}" BorderThickness="1" BorderBrush="Transparent" IsTabStop="False" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+
+            <Button x:Name="copyToClipboardButton" Grid.Column="2" Click="CopyToClipboard_Click" ToolTipService.ToolTip="Copy text to clipboard" Height="16" Visibility="Collapsed">📋</Button>
+        </Grid>
+    </ContentControl>
+</UserControl>

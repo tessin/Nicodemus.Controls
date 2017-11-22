@@ -235,11 +235,17 @@
     </ServiceMetadataReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Nicodemus.Controls.Test.Server\DataSources\ApplicationData\Table1Item.lsml.cs">
+      <Link>UserCode\Shared\Table1Item.lsml.cs</Link>
+    </Compile>
     <Compile Include="..\Nicodemus.Controls.Test.Server\DataSources\ApplicationData\TestDataItem.lsml.cs">
       <Link>UserCode\Shared\TestDataItem.lsml.cs</Link>
     </Compile>
     <Compile Include="Models\PropertyWindowDemoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\Table1ItemsListDetail.lsml.cs">
+      <DependentUpon>Table1ItemsListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\TestDataItemsGrid.lsml.cs">
       <DependentUpon>TestDataItemsGrid.lsml</DependentUpon>
     </Compile>
@@ -254,6 +260,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
     <LightSwitchModel Include="Properties\ApplicationData\TestDataItems.lsml" />
+    <LightSwitchModel Include="Properties\ApplicationData\Table1Items.lsml" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\OutOfBrowserSettings.xml" />
     <ClientResource Include="Properties\Config.xml" />
@@ -261,6 +268,7 @@
     <LightSwitchModel Include="Screens\TestDataItemsListDetail.lsml" />
     <LightSwitchModel Include="Screens\TestDataItemsGrid.lsml" />
     <LightSwitchModel Include="Screens\UtcDateTimePickerDetailsScreen.lsml" />
+    <LightSwitchModel Include="Screens\Table1ItemsListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Nicodemus.Controls\Nicodemus.Controls.csproj">

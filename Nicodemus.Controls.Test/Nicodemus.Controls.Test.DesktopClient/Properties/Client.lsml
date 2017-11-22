@@ -45,11 +45,14 @@
     <ApplicationCommand
       Name="ScreenCommandShowUtcDateTimePickerDetailsScreen"
       Target="!module/Methods[ShowUtcDateTimePickerDetailsScreen]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowTable1ItemsListDetail"
+      Target="!module/Methods[ShowTable1ItemsListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
       Name="Tasks"
-      DefaultItem="!module/NavigationItems[Tasks]/Children[UtcDateTimePickerDetailsScreen]">
+      DefaultItem="!module/NavigationItems[Tasks]/Children[Table1ItemsListDetail]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Tasks" />
@@ -63,19 +66,9 @@
       <ApplicationNavigationLink
         Name="UtcDateTimePickerDetailsScreen"
         Command="!module/Commands[ScreenCommandShowUtcDateTimePickerDetailsScreen]" />
-    </ApplicationNavigationGroup>
-    <ApplicationNavigationGroup
-      Name="Administration">
-      <ApplicationNavigationGroup.Attributes>
-        <DisplayName
-          Value="Administration" />
-      </ApplicationNavigationGroup.Attributes>
       <ApplicationNavigationLink
-        Name="RolesScreen"
-        Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowRolesScreen]" />
-      <ApplicationNavigationLink
-        Name="UsersScreen"
-        Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
+        Name="Table1ItemsListDetail"
+        Command="!module/Commands[ScreenCommandShowTable1ItemsListDetail]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

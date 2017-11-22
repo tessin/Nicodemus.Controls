@@ -108,6 +108,11 @@
     </Compile>
     <Compile Include="DateTime\UtcDateTimePickerDateConverter.cs" />
     <Compile Include="DateTime\UtcDateTimePickerTimeConverter.cs" />
+    <Compile Include="Debugger\DebuggerPropertiesValueConverter.cs" />
+    <Compile Include="Debugger\DebuggerUserControl.xaml.cs">
+      <DependentUpon>DebuggerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Debugger\DebuggerValueConverter.cs" />
     <Compile Include="Dialogs\PropertyWindowBuilder.cs" />
     <Compile Include="Editors\XmlTextEditor.cs" />
     <Compile Include="Files\FileAvailableEventArgs.cs" />
@@ -118,6 +123,9 @@
     <Compile Include="DateTime\DateTimeExtensions.cs" />
     <Compile Include="Common\VisualTreeHelperExt.cs" />
     <Compile Include="Buttons\LinkButton.cs" />
+    <Compile Include="Labels\SelectableLabel2.xaml.cs">
+      <DependentUpon>SelectableLabel2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Labels\SelectableLabel.cs" />
     <Compile Include="Files\SelectFile.xaml.cs">
@@ -150,6 +158,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Debugger\DebuggerUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Dialogs\PropertyWindowStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -167,6 +179,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Dialogs\PropertyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Labels\SelectableLabel2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

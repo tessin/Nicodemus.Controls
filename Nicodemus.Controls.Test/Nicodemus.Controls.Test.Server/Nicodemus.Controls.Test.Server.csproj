@@ -192,6 +192,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSources\ApplicationData\Table1Item.lsml.cs">
+      <DependentUpon>Table1Items.lsml</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\ApplicationData\TestDataItem.lsml.cs">
       <DependentUpon>TestDataItems.lsml</DependentUpon>
     </Compile>
@@ -209,6 +212,7 @@
     <LightSwitchModel Include="Properties\DataSources\ApplicationData.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\TestDataItems.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\UtcDateTimeRecords.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Table1Items.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -225,7 +229,6 @@
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
