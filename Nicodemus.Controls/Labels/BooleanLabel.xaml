@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Nicodemus.Controls.Labels.BooleanLabel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Nicodemus.Controls.Labels"
+    mc:Ignorable="d"
+    d:DesignHeight="100" 
+    d:DesignWidth="400"
+    x:Name="this"
+    >
+    <UserControl.Resources>
+        <local:BooleanToEnglishConverter x:Key="toEnglishConverter" />
+        <local:BooleanToVisibleIfTrueConverter x:Key="visibleIfTrueConverter" />
+        <local:BooleanToVisibleIfNotTrueConverter x:Key="visibleIfNotTrueConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <Border Visibility="{Binding Path=Value, Mode=OneWay, Converter={StaticResource visibleIfTrueConverter}}" 
+                Background="{Binding Path=CustomBackground, ElementName=this}">
+            <TextBlock Text="{Binding Path=Value, Mode=OneWay, Converter={StaticResource toEnglishConverter}}" 
+                       Foreground="{Binding Path=CustomForeground, ElementName=this}" 
+                       FontWeight="{Binding Path=CustomFontWeight, ElementName=this}"
+                       />
+        </Border>
+        <Border Visibility="{Binding Path=Value, Mode=OneWay, Converter={StaticResource visibleIfNotTrueConverter}}">
+            <ContentPresenter Content="{Binding Path=Value, Mode=OneWay, Converter={StaticResource toEnglishConverter}}" />
+        </Border>
+    </Grid>
+</UserControl>

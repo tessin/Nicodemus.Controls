@@ -48,11 +48,14 @@
     <ApplicationCommand
       Name="ScreenCommandShowTable1ItemsListDetail"
       Target="!module/Methods[ShowTable1ItemsListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowBooleanItemsListDetail"
+      Target="!module/Methods[ShowBooleanItemsListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
       Name="Tasks"
-      DefaultItem="!module/NavigationItems[Tasks]/Children[Table1ItemsListDetail]">
+      DefaultItem="!module/NavigationItems[Tasks]/Children[BooleanItemsListDetail]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Tasks" />
@@ -69,6 +72,9 @@
       <ApplicationNavigationLink
         Name="Table1ItemsListDetail"
         Command="!module/Commands[ScreenCommandShowTable1ItemsListDetail]" />
+      <ApplicationNavigationLink
+        Name="BooleanItemsListDetail"
+        Command="!module/Commands[ScreenCommandShowBooleanItemsListDetail]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

@@ -213,6 +213,7 @@
     <LightSwitchModel Include="DataSources\ApplicationData\TestDataItems.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\UtcDateTimeRecords.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\Table1Items.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\BooleanItems.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

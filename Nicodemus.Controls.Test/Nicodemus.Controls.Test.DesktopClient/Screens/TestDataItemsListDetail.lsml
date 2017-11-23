@@ -574,7 +574,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
-                          Value="Nicodemus.Controls.ConditionalStyledLabel, Nicodemus.Controls"
+                          Value="Nicodemus.Controls.Labels.BooleanLabel, Nicodemus.Controls"
                           ResultType=":String" />
                       </ChainExpression>
                     </ScreenExpressionTree>

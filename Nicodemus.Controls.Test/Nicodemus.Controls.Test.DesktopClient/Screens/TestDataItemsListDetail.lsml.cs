@@ -56,12 +56,12 @@ namespace LightSwitchApplication
                 };
             };
 
-            this.FindControl("MyConditionalStyledLabel").ControlAvailable += (s, e) =>
-            {
-                ((ConditionalStyledLabel)e.Control).ConditionalForeground = new SolidColorBrush(Colors.Red);
-                ((ConditionalStyledLabel)e.Control).ConditionalFontWeight = FontWeights.Bold;
-                ((ConditionalStyledLabel)e.Control).OnEvaluate = obj => ((TestDataItem)obj).BooleanField;
-            };
+            //this.FindControl("MyConditionalStyledLabel").ControlAvailable += (s, e) =>
+            //{
+            //    ((ConditionalStyledLabel)e.Control).ConditionalForeground = new SolidColorBrush(Colors.Red);
+            //    ((ConditionalStyledLabel)e.Control).ConditionalFontWeight = FontWeights.Bold;
+            //    ((ConditionalStyledLabel)e.Control).OnEvaluate = obj => ((TestDataItem)obj).BooleanField;
+            //};
 
             this.FindControl("WarningBooleanField").ControlAvailable += (s, e) =>
             {
